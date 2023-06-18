@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
-
+import { ContactForm } from './ContactForm/ContactForm';
+import { Filter } from './Filter/Filter';
 class App extends Component {
   state = {
     contacts: [
@@ -53,35 +54,11 @@ class App extends Component {
           color: '#010101',
         }}
       >
-        {/* Phonebook  */}
-
-        <form onSubmit={this.addContact}>
-          <h2>Phonebook</h2>
-          <label>
-            Name
-            <input
-              type="text"
-              name="name"
-              pattern="^[a-zA-Z]+(([' \u2013][a-zA-Z])?[a-zA-Z]*)*$"
-              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-              required
-            />
-          </label>
-          <label>
-            Number
-            <input
-              type="tel"
-              name="number"
-              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-              required
-            />
-          </label>
-          <button type="submit">Add contact</button>
-        </form>
-        {/* Phonebook  */}
+        <ContactForm onSubmit={this.addContact} />
         {/* filter */}
-        <label>
+
+        <Filter onChange={this.handleFilterChnage} />
+        {/* <label>
           Find contacts by name
           <input
             onChange={this.handleFilterChnage}
@@ -89,7 +66,7 @@ class App extends Component {
             name="name"
             pattern="^[a-zA-Z]+(([' \u2013][a-zA-Z])?[a-zA-Z]*)*$"
           />
-        </label>
+        </label> */}
         {/* filter */}
         {/* ContactList  */}
         <div>
