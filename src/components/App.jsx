@@ -42,9 +42,12 @@ class App extends Component {
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
   };
+  removeContact = id => {
+    const { contacts } = this.state;
+    this.setState({ contacts: contacts.filter(contact => contact.id !== id) });
+    // console.log(id);
+  };
   render() {
-    // console.log(this.state);
-
     return (
       <div
         style={{
@@ -61,7 +64,10 @@ class App extends Component {
         <Filter onChange={this.handleFilterChnage} />
 
         <ContactList>
-          <ContactItem arrayOfContacts={this.filterArrayByName()} />
+          <ContactItem
+            arrayOfContacts={this.filterArrayByName()}
+            deleteFunction={this.removeContact}
+          />
         </ContactList>
       </div>
     );
