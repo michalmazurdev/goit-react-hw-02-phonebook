@@ -1,5 +1,7 @@
+import css from './ContactForm.module.css';
+
 export const ContactForm = ({ onSubmit }) => (
-  <form onSubmit={onSubmit}>
+  <form className={css.form} onSubmit={onSubmit}>
     <h2>Phonebook</h2>
     <label>
       Name

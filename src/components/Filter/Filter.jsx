@@ -1,3 +1,5 @@
+// import css from './Filter.module.css';
+
 export const Filter = ({ onChange }) => (
   <label>
     Find contacts by name
