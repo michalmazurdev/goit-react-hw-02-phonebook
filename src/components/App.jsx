@@ -19,7 +19,6 @@ class App extends Component {
   addContact = async event => {
     event.preventDefault();
     const { name, number } = event.currentTarget;
-    console.log('name', name);
     const { contacts } = this.state;
     const contactNames = contacts.map(contact => contact.name);
     if (contactNames.includes(name.value)) {
@@ -45,7 +44,6 @@ class App extends Component {
   removeContact = id => {
     const { contacts } = this.state;
     this.setState({ contacts: contacts.filter(contact => contact.id !== id) });
-    // console.log(id);
   };
   render() {
     return (
@@ -55,6 +53,7 @@ class App extends Component {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
+          flexDirection: 'column',
           fontSize: 40,
           color: '#010101',
         }}
