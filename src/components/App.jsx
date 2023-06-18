@@ -2,6 +2,8 @@ import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
+import { ContactItem } from './ContactItem/ContactItem';
+import { ContactList } from './ContactList/ContactList';
 class App extends Component {
   state = {
     contacts: [
@@ -55,31 +57,12 @@ class App extends Component {
         }}
       >
         <ContactForm onSubmit={this.addContact} />
-        {/* filter */}
 
         <Filter onChange={this.handleFilterChnage} />
-        {/* <label>
-          Find contacts by name
-          <input
-            onChange={this.handleFilterChnage}
-            type="text"
-            name="name"
-            pattern="^[a-zA-Z]+(([' \u2013][a-zA-Z])?[a-zA-Z]*)*$"
-          />
-        </label> */}
-        {/* filter */}
-        {/* ContactList  */}
-        <div>
-          <h2>Contacts</h2>
-          <ul>
-            {this.filterArrayByName().map(contact => (
-              <li key={nanoid()}>
-                {contact.name} {contact.number}
-              </li>
-            ))}
-          </ul>
-        </div>
-        {/* ContactList  */}
+
+        <ContactList>
+          <ContactItem arrayOfContacts={this.filterArrayByName()} />
+        </ContactList>
       </div>
     );
   }
