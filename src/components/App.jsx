@@ -49,7 +49,8 @@ class App extends Component {
     return (
       <div
         style={{
-          height: '100vh',
+          // height: '100vh',
+          paddingTop: 20,
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
