@@ -1,0 +1,11 @@
+.contactListContainer {
+  padding: 25px;
+}
+.heading {
+  margin: 0;
+  font-size: 3rem;
+  text-align: center;
+}
+.list {
+  margin: 15px 0 0 0;
+}

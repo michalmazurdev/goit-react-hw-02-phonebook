@@ -1,12 +1,27 @@
 .form {
   border: 1px solid black;
-  min-width: 50vw;
+  padding: 25px;
 }
-label {
-  display: block;
-  font-size: 2rem;
-  margin-bottom: 20px;
+.heading {
+  margin: 0;
+  font-size: 3rem;
 }
-input {
+.label {
   display: block;
+  font-size: 1.5rem;
+  margin-top: 15px;
+}
+.input {
+  margin-top: 12px;
+  display: block;
+  border: 1.5px solid black;
+  font-size: 1.2rem;
+  border-radius: 0.25rem;
+}
+.button {
+  width: 10rem;
+  height: 2rem;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 0.25rem;
 }
