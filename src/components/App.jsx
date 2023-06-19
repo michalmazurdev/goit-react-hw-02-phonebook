@@ -4,6 +4,7 @@ import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
 import { ContactItem } from './ContactItem/ContactItem';
 import { ContactList } from './ContactList/ContactList';
+import css from './App.module.css';
 class App extends Component {
   state = {
     contacts: [
@@ -59,6 +60,7 @@ class App extends Component {
           color: '#010101',
         }}
       >
+        <h2 className={css.heading}>Phonebook</h2>
         <ContactForm onSubmit={this.addContact} />
 
         <Filter onChange={this.handleFilterChnage} />

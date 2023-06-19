@@ -2,15 +2,15 @@
   border: 1px solid black;
   padding: 25px;
   border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
 }
-.heading {
-  margin: 0;
-  font-size: 3rem;
-}
+
 .label {
   display: block;
   font-size: 1.3rem;
-  margin-top: 15px;
 }
 .input {
   margin-top: 12px;
