@@ -50,21 +50,17 @@ class App extends Component {
     return (
       <div
         style={{
-          // height: '100vh',
-          paddingTop: 20,
           display: 'flex',
-          justifyContent: 'center',
           alignItems: 'center',
           flexDirection: 'column',
           fontSize: 40,
           color: '#010101',
         }}
       >
-        <h2 className={css.heading}>Phonebook</h2>
+        <h1 className={css.heading}>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
-
+        <h2 className={css.secondaryHeading}>Contacts</h2>
         <Filter onChange={this.handleFilterChnage} />
-
         <ContactList>
           <ContactItem
             arrayOfContacts={this.filterArrayByName()}
