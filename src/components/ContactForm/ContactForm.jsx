@@ -1,12 +1,13 @@
 import css from './ContactForm.module.css';
 import PropTypes from 'prop-types';
 
-export const ContactForm = ({ onSubmit }) => (
+export const ContactForm = ({ onSubmit, onChange }) => (
   <form className={css.form} onSubmit={onSubmit}>
     <label className={css.label}>
       Name
       <input
         className={css.input}
+        onChange={onChange}
         type="text"
         name="name"
         pattern="^[a-zA-Z]+(([' \u2013][a-zA-Z])?[a-zA-Z]*)*$"
@@ -18,6 +19,7 @@ export const ContactForm = ({ onSubmit }) => (
       Number
       <input
         className={css.input}
+        onChange={onChange}
         type="tel"
         name="number"
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"

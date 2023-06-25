@@ -20,23 +20,23 @@ class App extends Component {
 
   addContact = async event => {
     event.preventDefault();
-    const { name, number } = event.currentTarget;
-    const { contacts } = this.state;
+    const { name, number, contacts } = this.state;
     const contactNames = contacts.map(contact => contact.name);
-    if (contactNames.includes(name.value)) {
-      return alert(`${name.value} is alredy in contacts`);
+    if (contactNames.includes(name)) {
+      return alert(`${name} is alredy in contacts`);
     }
     await this.setState(prevState => ({
       contacts: [
         ...prevState.contacts,
-        { id: nanoid(), name: name.value, number: number.value.toString() },
+        { id: nanoid(), name: name, number: number.toString() },
       ],
     }));
     event.target.reset();
   };
 
-  handleFilterChnage = event => {
-    this.setState({ filter: event.target.value });
+  handleChnage = event => {
+    console.log(event.target.name, event.target.value);
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   filterArrayByName = event => {
@@ -52,6 +52,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <div
         style={{
@@ -63,9 +64,9 @@ class App extends Component {
         }}
       >
         <h1 className={css.heading}>Phonebook</h1>
-        <ContactForm onSubmit={this.addContact} />
+        <ContactForm onSubmit={this.addContact} onChange={this.handleChnage} />
         <h2 className={css.secondaryHeading}>Contacts</h2>
-        <Filter onChange={this.handleFilterChnage} />
+        <Filter onChange={this.handleChnage} />
         <ContactList>
           <ContactItem
             arrayOfContacts={this.filterArrayByName()}

@@ -8,7 +8,7 @@ export const Filter = ({ onChange }) => (
       className={css.input}
       onChange={onChange}
       type="text"
-      name="name"
+      name="filter"
       pattern="^[a-zA-Z]+(([' \u2013][a-zA-Z])?[a-zA-Z]*)*$"
     />
   </label>
