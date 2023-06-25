@@ -1,4 +1,5 @@
 import css from './ContactForm.module.css';
+import PropTypes from 'prop-types';
 
 export const ContactForm = ({ onSubmit }) => (
   <form className={css.form} onSubmit={onSubmit}>
@@ -29,3 +30,7 @@ export const ContactForm = ({ onSubmit }) => (
     </button>
   </form>
 );
+
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func,
+};

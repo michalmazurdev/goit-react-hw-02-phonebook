@@ -1,4 +1,5 @@
 import css from './ContactItem.module.css';
+import PropTypes from 'prop-types';
 
 export const ContactItem = ({ arrayOfContacts, deleteFunction }) =>
   arrayOfContacts.map(contact => (
@@ -11,3 +12,8 @@ export const ContactItem = ({ arrayOfContacts, deleteFunction }) =>
       </button>
     </li>
   ));
+
+ContactItem.propTypes = {
+  arrayOfContacts: PropTypes.array,
+  deleteFunction: PropTypes.func,
+};

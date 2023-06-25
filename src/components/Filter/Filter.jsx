@@ -1,4 +1,5 @@
 import css from './Filter.module.css';
+import PropTypes from 'prop-types';
 
 export const Filter = ({ onChange }) => (
   <label className={css.label}>
@@ -12,3 +13,7 @@ export const Filter = ({ onChange }) => (
     />
   </label>
 );
+
+Filter.propTypes = {
+  onChange: PropTypes.func,
+};

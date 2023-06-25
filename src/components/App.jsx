@@ -15,6 +15,7 @@ class App extends Component {
     ],
     name: '',
     filter: '',
+    number: '',
   };
 
   addContact = async event => {
@@ -33,19 +34,23 @@ class App extends Component {
     }));
     event.target.reset();
   };
+
   handleFilterChnage = event => {
     this.setState({ filter: event.target.value });
   };
+
   filterArrayByName = event => {
     const { contacts, filter } = this.state;
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
   };
+
   removeContact = id => {
     const { contacts } = this.state;
     this.setState({ contacts: contacts.filter(contact => contact.id !== id) });
   };
+
   render() {
     return (
       <div
